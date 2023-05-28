@@ -24,8 +24,8 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          token: ${{'6265186088:AAFQ_hRS3MMIrtLt1nY_YX8yDw1LCU8S1gE'}}
-          channel_id: ${{'-1001680789529'}}
+          token: ${{ secrets.token }}
+          channel_id: ${{ secrets.channel_id }}
         run: python main.py
           
       - name: commit files
