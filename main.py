@@ -24,7 +24,7 @@ channel_id = os.environ['CHANNEL_ID']
 #prx =  "http://proxy.server:3128"
 bot = telebot.TeleBot(token, parse_mode='HTML')
 
-send_delay = True     #Включение таймера отправки
+send_delay = False     #Включение таймера отправки
 
 
 #фейк замена для браузера
