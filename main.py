@@ -5,7 +5,6 @@ import io
 import math
 import telebot
 import datetime as dt
-import time
 import logging
 import os
 
@@ -152,13 +151,18 @@ def main():
         while True:
             timee = dt.datetime.now()
             timee += dt.timedelta(hours=5) #время в Уфе
-            status = False
-            if (timee.hour == 5 or timee.hour == 6) and (status == False):
+            file = open('status.txt')
+            status = file.read()
+            file.close()
+            if (timee.hour == 5 or timee.hour == 6) and (bool(status) == False):
                 sending()
-                status = True
+                file = open('status.txt','w')
+                file.write('True')
+                file.close
             elif timee.hour > 6 and timee.hour < 23:
-                status = False
-            time.sleep(60) # ждем 60 секунд и проверяем время еще раз
+                file = open('status.txt','w')
+                file.write('False')
+                file.close
     else:
         sending()
 
