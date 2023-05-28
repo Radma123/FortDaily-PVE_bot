@@ -20,8 +20,8 @@ logging.warning('________________________________HELLO__________________________
 
 
 # настройки для телеги
-token = os.environ['token']
-channel_id = os.environ['channel_id']
+token = os.environ['TOKEN']
+channel_id = os.environ['CHANNEL_ID']
 #prx =  "http://proxy.server:3128"
 bot = telebot.TeleBot(token, parse_mode='HTML')
 
