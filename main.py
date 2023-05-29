@@ -4,7 +4,7 @@ from PIL import Image
 import io
 import math
 import telebot
-import datetime as dt
+#import datetime as dt
 import logging
 import os
 
@@ -146,29 +146,30 @@ def sending():
 
 
 
-def main():
-    if send_delay == True:
-        timee = dt.datetime.now()
-        timee += dt.timedelta(hours=5) #время в Уфе
-        file = open('status.txt')
-        status = file.read()
-        file.close()
-        if (timee.hour == 5 or timee.hour == 6) and (bool(status) == False):
-            sending()
-            file = open('status.txt','w')
-            file.write('True')
-            file.close
-        elif timee.hour > 6 and timee.hour < 23:
-            file = open('status.txt','w')
-            file.write('False')
-            file.close
-    else:
-        sending()
+# def main():
+#     if send_delay == True:
+#         timee = dt.datetime.now()
+#         timee += dt.timedelta(hours=5) #время в Уфе
+#         file = open('status.txt')
+#         status = file.read()
+#         file.close()
+#         if (timee.hour == 5 or timee.hour == 6) and (bool(status) == False):
+#             sending()
+#             file = open('status.txt','w')
+#             file.write('True')
+#             file.close
+#         elif timee.hour > 6 and timee.hour < 23:
+#             file = open('status.txt','w')
+#             file.write('False')
+#             file.close
+#     else:
+#         sending()
 
 
 if __name__ == '__main__':
     try:
-        main()
+        sending()
+        #main()
     except Exception as err:
         logging.exception(err)
         print('An error has occured')
