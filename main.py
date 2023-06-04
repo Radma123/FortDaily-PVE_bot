@@ -43,12 +43,13 @@ def daily_shop():
     k = 0
     for category in magazine:
         skins = category.find_all('a')
-        if math.ceil(len(skins)/3) > 10:
+        if math.ceil(len(skins)/3) > 9:
             p1 = []
             p2 = []
             allpr = []
+            dl = math.ceil(len(skins)/2) + len(skins)%2
             for i in range(len(skins)):
-                if i <= 29:
+                if i <= (dl-1):
                     p1.append(skins[i])
                 else:
                     p2.append(skins[i])
