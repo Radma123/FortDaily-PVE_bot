@@ -24,8 +24,6 @@ channel_id = os.environ['CHANNEL_ID']
 #prx =  "http://proxy.server:3128"
 bot = telebot.TeleBot(token, parse_mode='HTML')
 
-send_delay = True     #Включение таймера отправки
-
 
 #фейк замена для браузера
 header = {
@@ -45,43 +43,89 @@ def daily_shop():
     k = 0
     for category in magazine:
         skins = category.find_all('a')
-
-        dlina = 2196                       #background image(black wallpaper)
-        # visota = (len(skins) // 3) * 731
-        # if len(skins) % 3 != 0:
-        #     visota += 731
-        visota = math.ceil(len(skins) / 3) * 732
-        background_img = Image.new('RGB',(dlina,visota),'black')
-
-        for skin1 in range(len(skins)):
-            k+=1
-            href = skins[skin1].get('href')
-            image_bytes = requests.get(href).content
-            pillow_image = Image.open(io.BytesIO(image_bytes))
-            pillow_image = pillow_image.resize((732, 732))
-            
-            paste_dlina = 0
-            paste_visota = 0
-
-            if k % 3 == 0:
-                paste_dlina = 1464
-            elif k % 3 == 2:
-                if skin1 == len(skins) - 1:
-                    paste_dlina = 1098
+        if math.ceil(len(skins)/3) > 10:
+            p1 = []
+            p2 = []
+            allpr = []
+            for i in range(len(skins)):
+                if i <= 29:
+                    p1.append(skins[i])
                 else:
-                    paste_dlina = 732
-            else: # k % 3 == 1
-                if skin1 == len(skins) - 2:
-                    paste_dlina = 366
-                elif skin1 == len(skins) - 1:
-                    paste_dlina = 732
-                else:
+                    p2.append(skins[i])
+            allpr.append(p1)
+            allpr.append(p2)
+            for skins in allpr:
+                dlina = 2196                       #background image(black wallpaper)
+                visota = math.ceil(len(skins) / 3) * 732
+                background_img = Image.new('RGB',(dlina,visota),'black')
+
+                for skin1 in range(len(skins)):
+                    k+=1
+                    href = skins[skin1].get('href')
+                    image_bytes = requests.get(href).content
+                    pillow_image = Image.open(io.BytesIO(image_bytes))
+                    pillow_image = pillow_image.resize((732, 732))
+                    
                     paste_dlina = 0
-            
-            paste_visota = math.ceil(k/3) * 732 - 732
-            background_img.paste(pillow_image,(paste_dlina,paste_visota))
-        k = 0
-        mediaphoto_jpeg_skins.append(background_img)
+                    paste_visota = 0
+
+                    if k % 3 == 0:
+                        paste_dlina = 1464
+                    elif k % 3 == 2:
+                        if skin1 == len(skins) - 1:
+                            paste_dlina = 1098
+                        else:
+                            paste_dlina = 732
+                    else: # k % 3 == 1
+                        if skin1 == len(skins) - 2:
+                            paste_dlina = 366
+                        elif skin1 == len(skins) - 1:
+                            paste_dlina = 732
+                        else:
+                            paste_dlina = 0
+                    
+                    paste_visota = math.ceil(k/3) * 732 - 732
+                    background_img.paste(pillow_image,(paste_dlina,paste_visota))
+                k = 0
+                mediaphoto_jpeg_skins.append(background_img)
+        else:
+            dlina = 2196                       #background image(black wallpaper)
+            # visota = (len(skins) // 3) * 731
+            # if len(skins) % 3 != 0:
+            #     visota += 731
+            visota = math.ceil(len(skins) / 3) * 732
+            background_img = Image.new('RGB',(dlina,visota),'black')
+
+            for skin1 in range(len(skins)):
+                k+=1
+                href = skins[skin1].get('href')
+                image_bytes = requests.get(href).content
+                pillow_image = Image.open(io.BytesIO(image_bytes))
+                pillow_image = pillow_image.resize((732, 732))
+                
+                paste_dlina = 0
+                paste_visota = 0
+
+                if k % 3 == 0:
+                    paste_dlina = 1464
+                elif k % 3 == 2:
+                    if skin1 == len(skins) - 1:
+                        paste_dlina = 1098
+                    else:
+                        paste_dlina = 732
+                else: # k % 3 == 1
+                    if skin1 == len(skins) - 2:
+                        paste_dlina = 366
+                    elif skin1 == len(skins) - 1:
+                        paste_dlina = 732
+                    else:
+                        paste_dlina = 0
+                
+                paste_visota = math.ceil(k/3) * 732 - 732
+                background_img.paste(pillow_image,(paste_dlina,paste_visota))
+            k = 0
+            mediaphoto_jpeg_skins.append(background_img)
+
     return mediaphoto_jpeg_skins
 
 
