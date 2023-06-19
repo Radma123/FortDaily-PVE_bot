@@ -38,7 +38,7 @@ def daily_shop():
     block = soup.find('div',class_ ='entry-content single-content')
     magazine = block.find_all('p')[2:-2]
 
-    # mediaphoto_jpeg_skins = []
+    mediaphoto_jpeg_skins = []
 
     k = 0
     for category in magazine:
@@ -88,8 +88,7 @@ def daily_shop():
                     paste_visota = math.ceil(k/3) * 732 - 732
                     background_img.paste(pillow_image,(paste_dlina,paste_visota))
                 k = 0
-                # mediaphoto_jpeg_skins.append(background_img)
-                bot.send_photo(channel_id, background_img)
+                mediaphoto_jpeg_skins.append(background_img)
         else:
             dlina = 2196                       #background image(black wallpaper)
             # visota = (len(skins) // 3) * 731
@@ -126,10 +125,9 @@ def daily_shop():
                 paste_visota = math.ceil(k/3) * 732 - 732
                 background_img.paste(pillow_image,(paste_dlina,paste_visota))
             k = 0
-            # mediaphoto_jpeg_skins.append(background_img)
-            bot.send_photo(channel_id, background_img)
+            mediaphoto_jpeg_skins.append(background_img)
 
-    # return mediaphoto_jpeg_skins
+    return mediaphoto_jpeg_skins
 
 
 
@@ -183,9 +181,13 @@ def check_alerts():
 
 
 def sending():
-    # mediagroup = [telebot.types.InputMediaPhoto(i) for i in daily_shop()]
-    # bot.send_media_group(chat_id=channel_id, media=mediagroup)
-    daily_shop()
+    mediaphoto_jpeg_skins = daily_shop()
+    if len(mediaphoto_jpeg_skins) < 11:
+        mediagroup = [telebot.types.InputMediaPhoto(i) for i in mediaphoto_jpeg_skins]
+        bot.send_media_group(chat_id=channel_id, media=mediagroup)
+    else:
+        for page in mediaphoto_jpeg_skins:
+            bot.send_photo(chat_id=channel_id, photo=page)
     alerts = check_alerts()
     if alerts == False:
         bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
