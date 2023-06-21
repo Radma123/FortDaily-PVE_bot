@@ -181,13 +181,24 @@ def check_alerts():
 
 
 def sending():
-    mediaphoto_jpeg_skins = daily_shop()
-    if len(mediaphoto_jpeg_skins) < 11:
-        mediagroup = [telebot.types.InputMediaPhoto(i) for i in mediaphoto_jpeg_skins]
-        bot.send_media_group(chat_id=channel_id, media=mediagroup)
-    else:
-        for page in mediaphoto_jpeg_skins:
-            bot.send_photo(chat_id=channel_id, photo=page)
+    try:
+        mediaphoto_jpeg_skins = daily_shop()
+        if len(mediaphoto_jpeg_skins) < 11:
+            mediagroup = [telebot.types.InputMediaPhoto(i) for i in mediaphoto_jpeg_skins]
+            bot.send_media_group(chat_id=channel_id, media=mediagroup)
+        else:
+            for page in mediaphoto_jpeg_skins:
+                bot.send_photo(chat_id=channel_id, photo=page)
+    except Exception as err:
+        print('+++++++++++++++Exception raised, but still running+++++++++++++++')
+        logging.warning(err)
+        mediaphoto_jpeg_skins = daily_shop()
+        if len(mediaphoto_jpeg_skins) < 11:
+            mediagroup = [telebot.types.InputMediaPhoto(i) for i in mediaphoto_jpeg_skins]
+            bot.send_media_group(chat_id=channel_id, media=mediagroup)
+        else:
+            for page in mediaphoto_jpeg_skins:
+                bot.send_photo(chat_id=channel_id, photo=page)
     alerts = check_alerts()
     if alerts == False:
         bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
@@ -219,7 +230,6 @@ def sending():
 if __name__ == '__main__':
     try:
         sending()
-        #main()
     except Exception as err:
         logging.exception(err)
-        print('An error has occured')
+        print('??????????????????___Fatal error has occured!___?????????????????')
