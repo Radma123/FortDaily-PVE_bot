@@ -38,3 +38,4 @@ Traceback (most recent call last):
 ValueError: cannot write empty image as JPEG
 00:48:45 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
 00:44:48 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:44:10 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
