@@ -92,3 +92,4 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/PIL/JpegImagePlugin.py", line 637, in _save
     raise ValueError(msg)
 ValueError: cannot write empty image as JPEG
+00:51:16 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
