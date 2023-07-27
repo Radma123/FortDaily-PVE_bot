@@ -34,3 +34,4 @@ Traceback (most recent call last):
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: PHOTO_INVALID_DIMENSIONS
 00:41:33 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
 00:37:55 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:36:17 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
