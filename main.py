@@ -151,17 +151,17 @@ def check_alerts():
             zna4 = int(''.join(reward).split('x')[0])
             summary += zna4
             location = ''
-            if int(power) >= 1 and int(power) < 19:
+            if int(power) >= 1 and int(power) <= 19:
                 if int(power) == 19:
                     location = 'Камнелесье/Планкертон'
                 else:
                     location = 'Камнелесье'
-            elif int(power) > 19 and int(power) < 46:
+            elif int(power) > 19 and int(power) <= 46:
                 if int(power) == 46:
                     location = 'Планкертон/Вещая долина'
                 else:
                     location = 'Планкертон'
-            elif int(power) > 46 and int(power) < 76:
+            elif int(power) > 46 and int(power) <= 76:
                 if int(power) == 76:
                     location = 'Вещая долина/Линч-Пикс'
                 else:
