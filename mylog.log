@@ -352,3 +352,35 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 189, in _check_result
     raise ApiTelegramException(method_name, result, result_json)
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to send message #8 with the error message "PHOTO_INVALID_DIMENSIONS"
+00:34:25 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:34:49 - main - WARNING - sending: 194 - A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to send message #6 with the error message "PHOTO_INVALID_DIMENSIONS"
+00:35:13 - main - ERROR - <module>: 234 - A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to send message #6 with the error message "PHOTO_INVALID_DIMENSIONS"
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 188, in sending
+    bot.send_media_group(chat_id=channel_id, media=mediagroup)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/__init__.py", line 2523, in send_media_group
+    result = apihelper.send_media_group(
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 516, in send_media_group
+    return _make_request(
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to send message #6 with the error message "PHOTO_INVALID_DIMENSIONS"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 232, in <module>
+    sending()
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 198, in sending
+    bot.send_media_group(chat_id=channel_id, media=mediagroup)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/__init__.py", line 2523, in send_media_group
+    result = apihelper.send_media_group(
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 516, in send_media_group
+    return _make_request(
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to send message #6 with the error message "PHOTO_INVALID_DIMENSIONS"
