@@ -416,3 +416,4 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 189, in _check_result
     raise ApiTelegramException(method_name, result, result_json)
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to send message #6 with the error message "PHOTO_INVALID_DIMENSIONS"
+00:32:06 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
