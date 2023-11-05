@@ -202,6 +202,7 @@ def sending():
     except:
         pass
     alerts = check_alerts()
+    print('alerts')
     if alerts == False:
         bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
     else:
