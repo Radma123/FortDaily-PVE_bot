@@ -190,12 +190,6 @@ def sending():
             for page in mediaphoto_jpeg_skins:
                 bot.send_photo(chat_id=channel_id, photo=page)
 
-        alerts = check_alerts()
-        if alerts == False:
-            bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
-        else:
-            bot.send_message(chat_id=channel_id, text=alerts)
-
     except Exception as err:
         print('+++++++++++++++Exception raised, but still running+++++++++++++++')
         logging.warning(err)
@@ -208,6 +202,7 @@ def sending():
             for page in mediaphoto_jpeg_skins:
                 bot.send_photo(chat_id=channel_id, photo=page)
 
+    finally:
         alerts = check_alerts()
         if alerts == False:
             bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
@@ -241,10 +236,3 @@ if __name__ == '__main__':
     except Exception as err:
         logging.exception(err)
         print('??????????????????___Fatal error has occured!___?????????????????')
-
-        alerts = check_alerts()
-        print(alerts)
-        if alerts == False:
-            bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
-        else:
-            bot.send_message(chat_id=channel_id, text=alerts)
