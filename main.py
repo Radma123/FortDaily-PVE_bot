@@ -195,7 +195,7 @@ def sending():
             bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
         else:
             bot.send_message(chat_id=channel_id, text=alerts)
-            
+
     except Exception as err:
         print('+++++++++++++++Exception raised, but still running+++++++++++++++')
         logging.warning(err)
@@ -243,6 +243,7 @@ if __name__ == '__main__':
         print('??????????????????___Fatal error has occured!___?????????????????')
 
         alerts = check_alerts()
+        print(alerts)
         if alerts == False:
             bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
         else:
