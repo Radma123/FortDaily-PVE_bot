@@ -200,6 +200,7 @@ def sending():
             for page in mediaphoto_jpeg_skins:
                 bot.send_photo(chat_id=channel_id, photo=page)
     finally:
+        print('finally')
         alerts = check_alerts()
         if alerts == False:
             bot.send_message(chat_id=channel_id, text='<u>Сегодня нет V-Bucks</u>')
