@@ -27,7 +27,8 @@ bot = telebot.TeleBot(token, parse_mode='HTML')
 
 #фейк замена для браузера
 header = {
-    'user-agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 OPR/69.0.3686.77'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+    'Referer': 'https://www.google.com/'
 }
 
 
@@ -36,7 +37,7 @@ def daily_shop():
     response = requests.get('https://fnitemshop.com/',headers=header).text
     soup = BeautifulSoup(response,'lxml')
     block = soup.find('div',class_ ='entry-content single-content')
-    magazine = block.find_all('p')[2:-2]
+    magazine = block.find_all('p')[2:]
 
     mediaphoto_jpeg_skins = []
 
