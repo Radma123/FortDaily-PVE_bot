@@ -192,8 +192,9 @@ def sending():
                 bot.send_photo(chat_id=channel_id, photo=page)
 
     except Exception as err:
-        print('+++++++++++++++Exception raised, but still running+++++++++++++++')
+        print('+++++++++++++++Exception raised, but still running+++++++++++++++',end='\n')
         logging.warning(err)
+        print(err)
 
         mediaphoto_jpeg_skins = daily_shop()
         if len(mediaphoto_jpeg_skins) < 11:
@@ -236,4 +237,5 @@ if __name__ == '__main__':
         sending()
     except Exception as err:
         logging.exception(err)
-        print('??????????????????___Fatal error has occured!___?????????????????')
+        print('??????????????????___Fatal error has occured!___?????????????????',end='\n')
+        print(err)
