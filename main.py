@@ -38,7 +38,7 @@ def daily_shop():
     soup = BeautifulSoup(response,'lxml')
     block = soup.find('div',class_ ='entry-content single-content')
     magazine = block.find_all('p')[2:]
-
+    
     mediaphoto_jpeg_skins = []
 
     k = 0
