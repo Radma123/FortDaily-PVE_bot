@@ -197,7 +197,7 @@ def sending():
         logging.warning(err)
         print(err)
 
-        mediaphoto_jpeg_skins = daily_shop()
+        mediaphoto_jpeg_skins = daily_shop()[:-1]
         if len(mediaphoto_jpeg_skins) < 11:
             mediagroup = [telebot.types.InputMediaPhoto(i) for i in mediaphoto_jpeg_skins]
             bot.send_media_group(chat_id=channel_id, media=mediagroup)
