@@ -76,3 +76,4 @@ Traceback (most recent call last):
     raise ValueError(msg)
 ValueError: cannot write empty image as JPEG
 14:47:58 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:34:37 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
