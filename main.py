@@ -142,7 +142,7 @@ def check_alerts():
     soup = BeautifulSoup(response, 'lxml')
 
 
-    vbucksblock = soup.find('div', class_ = 'new_block_content').find_all('tr')
+    vbucksblock = soup.find_all('div', class_ = 'new_block_content')[1].find_all('tr')
 
     try:        
         missions = []
