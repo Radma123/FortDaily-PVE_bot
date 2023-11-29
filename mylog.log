@@ -89,3 +89,5 @@ ValueError: cannot write empty image as JPEG
 00:34:30 - main - WARNING - sending: 197 - cannot write empty image as JPEG
 00:34:26 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
 00:34:28 - main - WARNING - sending: 197 - cannot write empty image as JPEG
+00:34:57 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:35:05 - main - WARNING - sending: 197 - cannot write empty image as JPEG
