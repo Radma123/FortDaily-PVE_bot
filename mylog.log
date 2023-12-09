@@ -314,3 +314,5 @@ Traceback (most recent call last):
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 429. Description: Too Many Requests: retry after 22
 00:34:34 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
 00:34:43 - main - WARNING - sending: 197 - cannot write empty image as JPEG
+00:33:23 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:33:36 - main - WARNING - sending: 197 - cannot write empty image as JPEG
