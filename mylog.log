@@ -453,3 +453,39 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/PIL/JpegImagePlugin.py", line 637, in _save
     raise ValueError(msg)
 ValueError: cannot write empty image as JPEG
+00:32:47 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:33:08 - main - WARNING - sending: 197 - cannot write empty image as JPEG
+00:33:32 - main - ERROR - <module>: 240 - cannot write empty image as JPEG
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 193, in sending
+    bot.send_photo(chat_id=channel_id, photo=page)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/__init__.py", line 1825, in send_photo
+    apihelper.send_photo(
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 469, in send_photo
+    files = {'photo': util.pil_image_to_file(photo)}
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/service_utils.py", line 62, in pil_image_to_file
+    image.convert('RGB').save(photoBuffer, extension, quality=quality)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/PIL/Image.py", line 2432, in save
+    save_handler(self, fp, filename)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/PIL/JpegImagePlugin.py", line 637, in _save
+    raise ValueError(msg)
+ValueError: cannot write empty image as JPEG
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 238, in <module>
+    sending()
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 206, in sending
+    bot.send_photo(chat_id=channel_id, photo=page)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/__init__.py", line 1825, in send_photo
+    apihelper.send_photo(
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 469, in send_photo
+    files = {'photo': util.pil_image_to_file(photo)}
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/telebot/service_utils.py", line 62, in pil_image_to_file
+    image.convert('RGB').save(photoBuffer, extension, quality=quality)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/PIL/Image.py", line 2432, in save
+    save_handler(self, fp, filename)
+  File "/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/PIL/JpegImagePlugin.py", line 637, in _save
+    raise ValueError(msg)
+ValueError: cannot write empty image as JPEG
