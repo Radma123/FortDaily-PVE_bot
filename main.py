@@ -37,7 +37,7 @@ def daily_shop():
     response = requests.get('https://fnitemshop.com/',headers=header).text
     soup = BeautifulSoup(response,'lxml')
     block = soup.find('div',class_ ='entry-content single-content')
-    magazine = block.find_all('p')[2:]
+    magazine = block.find_all('p')[2:-1]
     print(magazine)
     
     mediaphoto_jpeg_skins = []
