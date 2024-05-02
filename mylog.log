@@ -999,3 +999,4 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/telebot/apihelper.py", line 189, in _check_result
     raise ApiTelegramException(method_name, result, result_json)
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 429. Description: Too Many Requests: retry after 38
+00:33:33 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
