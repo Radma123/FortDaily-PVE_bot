@@ -1215,3 +1215,5 @@ Traceback (most recent call last):
   File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 145, in check_alerts
     vbucksblock = soup.find_all('div', class_ = 'new_block_content')[0].find_all('tr')
 IndexError: list index out of range
+00:34:55 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:34:55 - main - WARNING - sending: 197 - 'NoneType' object has no attribute 'find_all'
