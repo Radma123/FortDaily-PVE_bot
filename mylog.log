@@ -1218,3 +1218,5 @@ IndexError: list index out of range
 00:34:55 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
 00:34:55 - main - WARNING - sending: 197 - 'NoneType' object has no attribute 'find_all'
 00:34:40 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:37:54 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:37:54 - main - WARNING - sending: 197 - 'NoneType' object has no attribute 'find_all'
