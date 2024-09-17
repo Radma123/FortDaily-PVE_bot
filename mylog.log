@@ -4673,3 +4673,32 @@ Traceback (most recent call last):
   File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 145, in check_alerts
     vbucksblock = soup.find_all('div', class_ = 'new_block_content')[0].find_all('tr')
 IndexError: list index out of range
+00:34:49 - main - WARNING - <module>: 18 - ________________________________HELLO__________________________________
+00:34:49 - main - WARNING - sending: 197 - 'NoneType' object has no attribute 'find_all'
+00:34:49 - main - ERROR - <module>: 240 - list index out of range
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 187, in sending
+    mediaphoto_jpeg_skins = daily_shop()
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 40, in daily_shop
+    magazine = block.find_all('p')[2:-1]
+AttributeError: 'NoneType' object has no attribute 'find_all'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 200, in sending
+    mediaphoto_jpeg_skins = daily_shop()[:-1]
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 40, in daily_shop
+    magazine = block.find_all('p')[2:-1]
+AttributeError: 'NoneType' object has no attribute 'find_all'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 238, in <module>
+    sending()
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 209, in sending
+    alerts = check_alerts()
+  File "/home/runner/work/FortDaily-PVE_bot/FortDaily-PVE_bot/main.py", line 145, in check_alerts
+    vbucksblock = soup.find_all('div', class_ = 'new_block_content')[0].find_all('tr')
+IndexError: list index out of range
